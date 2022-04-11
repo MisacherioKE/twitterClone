@@ -21,16 +21,21 @@
                 <hr class="lineA"> <span>Or</span><hr class="lineB">
             </span> -->
            
-            <input type="text" class="user" placeholder="Phone, email or username">
-            <button class="next">Next</button>
+            <input type="text" class="user" id="email" placeholder="Phone, email or username">
+            <input type="password" id="pass" class="user" placeholder="password">
+            <button class="next" id="signIn">Next</button>
             <button class="forgot">Forgot password?</button>
             <span class="text">Dont have an account?<a href="/html/signUp.html">Sign up</a></span>
         </div>
    
     </section>
      
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+ 
+    <script src="/js/config.js"></script>
 
-
-    <script src="/js/index.js"></script>
+    <script src="../js/signIn.js"></script>
 </body>
 </html>
