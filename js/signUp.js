@@ -25,7 +25,7 @@ document.getElementById("signup").onclick = () =>{
         alert("user created successfully");
        
         // Invoking firestore
-        firebase.firestore().collection("users").doc()
+        firebase.firestore().collection("users").doc(uid)
         .set({
             email:email,
             username:username,

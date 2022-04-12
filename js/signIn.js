@@ -24,3 +24,10 @@ document.getElementById("signIn").onclick =()=>{
         console.log(error.message);
     })
 }
+
+
+// Reset Button
+
+document.getElementById("resetWindow").onclick =()=>{
+    window.location.href ="/html/resetPass.html";
+}
