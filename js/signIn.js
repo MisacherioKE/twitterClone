@@ -21,6 +21,7 @@ document.getElementById("signIn").onclick =()=>{
 
         window.location.href ="/html/home.html"
     }).catch((error)=>{
+        alert("Invalid Username or Password")
         console.log(error.message);
     })
 }
