@@ -43,3 +43,9 @@ document.getElementById("signup").onclick = () =>{
     })
 }
 
+// Close button
+
+document.getElementById("close").onclick =()=>{
+    window.location.href = "/html/signUp.html";
+}
+

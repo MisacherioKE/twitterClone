@@ -15,9 +15,16 @@
         <button id="close"><i class="fa-solid fa-xmark"></i></button>
         <span class="icon"><i class="fa-brands fa-twitter h1"></i></span>
         <span class="text1">Reset Password</span>
-        <input type="text" class="name" placeholder="enter your email">
-        <button class="next">Reset</button>
+        <input type="text" class="name" id="email" placeholder="enter the email you used to sign up">
+        <button class="next" id="reset">Reset</button>
     </div>
     </section>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+ 
+    <script src="/js/config.js"></script>
+    <script src="../js/reset.js"></script>
 </body>
 </html>
