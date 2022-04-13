@@ -18,6 +18,12 @@ firebase.auth().onAuthStateChanged((user)=>{
         // Tweet
 
 document.getElementById("tweetBtn").onclick =()=>{
+
+document.getElementById("spinner").style.display ="block";
+// document.getElementById("spinner").style.display ="flex";
+// document.getElementById("spinner").style.alignItems ="center";
+document.getElementById("spinner").style.marginLeft ="45%";
+
     let tweet = document.getElementById("searchInput").value;
     let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
 
@@ -33,11 +39,12 @@ document.getElementById("tweetBtn").onclick =()=>{
         alert("Tweet Sent Succesfully");
         // window.location.reload();
         document.getElementById("tweet").innerHTML = tweet;
+        document.getElementById("spinner").style.display ="none";
     }).catch((error) =>{
         alert(error.message);
     })
 
-    
+   
 }
     }
     else{

@@ -8,10 +8,22 @@ window.oncontextmenu = ()=>{
 // Sign In
 
 document.getElementById("signIn").onclick =()=>{
+
+   
+
     let email = document.getElementById("email").value;
     let password = document.getElementById("pass").value;
 
-    // Invoke Firebase
+    if(email ==""){
+        alert("Empty field!");
+    }else if(password ==""){
+        alert("Empty field!");
+    }else{
+
+        document.getElementById("signIn").style.display ="none";
+        document.getElementById("loading").style.display ="block";
+
+           // Invoke Firebase
 
     firebase.auth().signInWithEmailAndPassword(email,password)
     .then((userCredentials)=>{
@@ -23,8 +35,14 @@ document.getElementById("signIn").onclick =()=>{
     }).catch((error)=>{
         alert("Invalid Username or Password")
         console.log(error.message);
+        document.getElementById("signIn").style.display ="block";
+        document.getElementById("loading").style.display ="none";
     })
+    
 }
+    }
+
+ 
 
 
 // Reset Button
