@@ -50,7 +50,7 @@ document.getElementById("signup").onclick = () =>{
         }).then(()=>{
             alert("Please login with your credentials")
 
-            window.location.href ="/html/index.html"
+            window.location.href ="/index.html"
         }).catch((error)=>{
             alert(error.message);
             console.log(error.message);

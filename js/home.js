@@ -48,7 +48,7 @@ document.getElementById("spinner").style.marginLeft ="45%";
 }
     }
     else{
-        window.location.href ="/html/index.html";
+        window.location.href ="/index.html";
     }
 })
 

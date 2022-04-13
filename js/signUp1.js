@@ -13,5 +13,5 @@ document.getElementById("btnSignup").onclick =()=>{
 // Close button
 
 document.getElementById("close").onclick =()=>{
-    window.location.href = "/html/index.html";
+    window.location.href = "/index.html";
 }

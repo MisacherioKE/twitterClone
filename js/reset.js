@@ -20,5 +20,5 @@ document.getElementById("reset").onclick = ()=>{
 
 // Close Button
 document.getElementById("close").onclick =()=>{
-    window.location.href ="/html/index.html";
+    window.location.href ="/index.html";
 }
