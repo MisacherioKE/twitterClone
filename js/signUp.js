@@ -12,6 +12,23 @@ document.getElementById("signup").onclick = () =>{
     let username = document.getElementById("userName").value;
     let phonenumber = document.getElementById("phoneNumber").value;
 
+
+    // validation
+    //  try {
+    //     if(username =="") throw "empty field!";
+    //     // if(email =="") throw alert("empty field!");
+    //  } catch (error) {
+    //      alert(error.message);
+    //  }
+
+    if(email ==""){
+        alert("empty field!");
+    }else if(username ==""){
+        alert("empty field!");
+    }else if(phonenumber ==""){
+        alert("empty field!");
+    }else{
+       
     // Invoking Firebase
 
     firebase.auth().createUserWithEmailAndPassword(email,password)
@@ -22,7 +39,7 @@ document.getElementById("signup").onclick = () =>{
         console.log(user);
         console.log(uid);
 
-        alert("user created successfully");
+        alert("Account created successfully");
        
         // Invoking firestore
         firebase.firestore().collection("users").doc(uid)
@@ -31,17 +48,22 @@ document.getElementById("signup").onclick = () =>{
             username:username,
             phonenumber:phonenumber
         }).then(()=>{
-            alert("user data added succesfully")
+            alert("Please login with your credentials")
 
             window.location.href ="/html/index.html"
         }).catch((error)=>{
+            alert(error.message);
             console.log(error.message);
         })
         
     }).catch((error)=>{
+        alert(error.message);
+
         console.log(error.message);
     })
 }
+    }
+
 
 // Close button
 

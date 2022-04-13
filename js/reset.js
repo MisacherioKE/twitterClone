@@ -12,6 +12,8 @@ document.getElementById("reset").onclick = ()=>{
     firebase.auth().sendPasswordResetEmail(email).then(()=>{
         alert("A reset link has been sent to your email");
     }).catch((error) =>{
+        alert(error.message);
+
         console.log(error.message);
     })
 }
