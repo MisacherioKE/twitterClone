@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 
 
         alert(user.uid);
-        document.getElementById("searchInput").onclick =() =>{
+        document.getElementById("searchInput").onkeyup =() =>{
             document.getElementById("public").style.display ="block";
             document.getElementById("lineOne").style.display ="block";
         }
@@ -63,7 +63,10 @@ firebase.auth().onAuthStateChanged((user)=>{
         window.location.href ="/index.html";
     }
 })
-
+// Btn2
+document.getElementById("tweetBtn2").onclick =()=>{
+    document.getElementById("searchInput").innerText ="@misacherio";
+}
 
 
 
