@@ -15,35 +15,45 @@ firebase.auth().onAuthStateChanged((user)=>{
             document.getElementById("lineOne").style.display ="block";
         }
 
-        // Tweet
+         // Tweet
+        document.getElementById("tweetBtn").onclick =()=>{
 
-document.getElementById("tweetBtn").onclick =()=>{
+            document.getElementById("spinner").style.display ="block";
+            // document.getElementById("spinner").style.display ="flex";
+            // document.getElementById("spinner").style.alignItems ="center";
+            document.getElementById("spinner").style.marginLeft ="45%";
+            
+                let tweet = document.getElementById("searchInput").value;
+                let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
 
-document.getElementById("spinner").style.display ="block";
-// document.getElementById("spinner").style.display ="flex";
-// document.getElementById("spinner").style.alignItems ="center";
-document.getElementById("spinner").style.marginLeft ="45%";
+        if(!tweet){
+            alert("empty tweet");
+            document.getElementById("searchInput").style.borderStyle ="solid";
+            document.getElementById("searchInput").style.borderBlockColor ="red";
+            document.getElementById("spinner").style.display ="none";
+        }else{
+   
+    
+        // Invoke Firebase
+    
+        let tweetDoc = firebase.firestore().collection("tweets").doc();
+        tweetDoc.set({
+            timestamp: timestamp,
+            tweet:tweet,
+            tweetId: tweetDoc.id,
+            userId: user.uid
+        }).then(()=>{
+            alert("Tweet Sent Succesfully");
+            // window.location.reload();
+            document.getElementById("tweet").innerHTML = tweet;
+            document.getElementById("spinner").style.display ="none";
+        }).catch((error) =>{
+            alert(error.message);
+        })
+    
+        }
 
-    let tweet = document.getElementById("searchInput").value;
-    let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
-
-    // Invoke Firebase
-
-    let tweetDoc = firebase.firestore().collection("tweets").doc();
-    tweetDoc.set({
-        timestamp: timestamp,
-        tweet:tweet,
-        tweetId: tweetDoc.id,
-        userId: user.uid
-    }).then(()=>{
-        alert("Tweet Sent Succesfully");
-        // window.location.reload();
-        document.getElementById("tweet").innerHTML = tweet;
-        document.getElementById("spinner").style.display ="none";
-    }).catch((error) =>{
-        alert(error.message);
-    })
-
+     
    
 }
     }
