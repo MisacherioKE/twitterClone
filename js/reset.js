@@ -14,24 +14,31 @@ document.getElementById("reset").onclick = ()=>{
     }else{
         document.getElementById("email").style.border ="solid gray";
 
+
+        document.getElementById("loading").style.display ="block";
+        document.getElementById("reset").style.display ="none";
+
          // invoke firebase
     firebase.auth().sendPasswordResetEmail(email).then(()=>{
         alert("A reset link has been sent to your email");
+        alert("please login with your new password");
+        window.location.href ="/index.html";
     }).catch((error) =>{
         alert(error.message);
-
         console.log(error.message);
+        document.getElementById("loading").style.display ="none";
+        document.getElementById("reset").style.display ="block";
     })
     }
 
     // invoke firebase
-    firebase.auth().sendPasswordResetEmail(email).then(()=>{
-        alert("A reset link has been sent to your email");
-    }).catch((error) =>{
-        alert(error.message);
+    // firebase.auth().sendPasswordResetEmail(email).then(()=>{
+    //     alert("A reset link has been sent to your email");
+    // }).catch((error) =>{
+    //     alert(error.message);
 
-        console.log(error.message);
-    })
+    //     console.log(error.message);
+    // })
 }
 
 // Close Button

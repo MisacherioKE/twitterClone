@@ -25,7 +25,7 @@ document.getElementById("signup").onclick = () =>{
         document.getElementById("userName").style.border ="solid red";
         document.getElementById("phoneNumber").style.border ="solid gray";
         document.getElementById("pass").style.border ="solid gray";
-        
+
     }else if(phonenumber ==""){
         alert("empty field!");
         document.getElementById("email").style.border ="solid gray";
@@ -45,6 +45,10 @@ document.getElementById("signup").onclick = () =>{
         document.getElementById("userName").style.border ="solid gray";
         document.getElementById("phoneNumber").style.border ="solid gray";
         document.getElementById("pass").style.border ="solid gray";
+
+
+        document.getElementById("signup").style.display ="none";
+        document.getElementById("loading").style.display ="block";
     // Invoking Firebase
 
     firebase.auth().createUserWithEmailAndPassword(email,password)
@@ -56,6 +60,9 @@ document.getElementById("signup").onclick = () =>{
         console.log(uid);
 
         alert("Account created successfully");
+
+        document.getElementById("signup").style.display ="block";
+        document.getElementById("loading").style.display ="none";
        
         // Invoking firestore
         firebase.firestore().collection("users").doc(uid)
