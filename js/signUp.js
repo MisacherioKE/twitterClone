@@ -12,15 +12,6 @@ document.getElementById("signup").onclick = () =>{
     let username = document.getElementById("userName").value;
     let phonenumber = document.getElementById("phoneNumber").value;
 
-
-    // validation
-    //  try {
-    //     if(username =="") throw "empty field!";
-    //     // if(email =="") throw alert("empty field!");
-    //  } catch (error) {
-    //      alert(error.message);
-    //  }
-
     if(email ==""){
         alert("empty field!");
     }else if(username ==""){

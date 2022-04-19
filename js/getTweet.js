@@ -13,9 +13,11 @@ firebase.auth().onAuthStateChanged((user)=>{
                 let tweet = doc.data().tweet;
                 let time = doc.data().timestamp;
                 let newTime = time.toDate();
+                let name = doc.data().username;
 
                 let content = '';
                 content +=`<div>`
+                content +=`<p>${name}</p>`
                 content +=`<p>${newTime}</p>`
                 content +=`<p>${tweet}</p>`
                 content +=`</div>`

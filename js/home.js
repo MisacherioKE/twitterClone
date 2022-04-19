@@ -41,11 +41,12 @@ firebase.auth().onAuthStateChanged((user)=>{
             timestamp: timestamp,
             tweet:tweet,
             tweetId: tweetDoc.id,
-            userId: user.uid
+            userId: user.uid,
+            // username:username
         }).then(()=>{
             alert("Tweet Sent Succesfully");
-            // window.location.reload();
-            document.getElementById("tweet").innerHTML = tweet;
+            window.location.reload();
+            // document.getElementById("tweet").innerHTML = tweet;
             document.getElementById("spinner").style.display ="none";
         }).catch((error) =>{
             alert(error.message);
