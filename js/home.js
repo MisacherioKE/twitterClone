@@ -33,10 +33,11 @@ firebase.auth().onAuthStateChanged((user)=>{
             document.getElementById("spinner").style.display ="none";
         }else{
    
-    
+            document.getElementById("searchInput").style.borderStyle ="solid";
+            document.getElementById("searchInput").style.borderBlockColor ="gray";
+
         // Invoke Firebase
-    
-        let tweetDoc = firebase.firestore().collection("tweets").doc();
+            let tweetDoc = firebase.firestore().collection("tweets").doc();
         tweetDoc.set({
             timestamp: timestamp,
             tweet:tweet,

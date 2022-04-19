@@ -16,9 +16,15 @@ document.getElementById("signIn").onclick =()=>{
 
     if(email ==""){
         alert("Empty field!");
+        document.getElementById("email").style.border ="solid red";
+        document.getElementById("pass").style.border ="solid gray";
     }else if(password ==""){
         alert("Empty field!");
+        document.getElementById("pass").style.border ="solid red";
+        document.getElementById("email").style.border ="solid gray";
     }else{
+        document.getElementById("email").style.border ="solid gray";
+        document.getElementById("pass").style.border ="solid gray";
 
         document.getElementById("signIn").style.display ="none";
         document.getElementById("loading").style.display ="block";

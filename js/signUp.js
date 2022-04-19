@@ -14,12 +14,37 @@ document.getElementById("signup").onclick = () =>{
 
     if(email ==""){
         alert("empty field!");
+        document.getElementById("email").style.border ="solid red";
+        document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("phoneNumber").style.border ="solid gray";
+        document.getElementById("pass").style.border ="solid gray";
+
     }else if(username ==""){
         alert("empty field!");
+        document.getElementById("email").style.border ="solid gray";
+        document.getElementById("userName").style.border ="solid red";
+        document.getElementById("phoneNumber").style.border ="solid gray";
+        document.getElementById("pass").style.border ="solid gray";
+        
     }else if(phonenumber ==""){
         alert("empty field!");
-    }else{
-       
+        document.getElementById("email").style.border ="solid gray";
+        document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("phoneNumber").style.border ="solid red";
+        document.getElementById("pass").style.border ="solid gray";
+
+    }else if(!password){
+        document.getElementById("pass").style.border ="solid red";
+        document.getElementById("email").style.border ="solid gray";
+        document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("phoneNumber").style.border ="solid gray";
+        
+    }
+    else{
+        document.getElementById("email").style.border ="solid gray";
+        document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("phoneNumber").style.border ="solid gray";
+        document.getElementById("pass").style.border ="solid gray";
     // Invoking Firebase
 
     firebase.auth().createUserWithEmailAndPassword(email,password)
