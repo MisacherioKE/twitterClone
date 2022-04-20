@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 
         if(!tweet){
             alert("empty tweet");
-            document.getElementById("searchInput").style.borderStyle ="solid red";
+            document.getElementById("searchInput").style.border ="solid red";
             document.getElementById("spinner").style.display ="none";
         }else{
    
@@ -73,29 +73,32 @@ firebase.auth().onAuthStateChanged((user)=>{
            }
         //    tweet
         document.getElementById("tweetBtn3").onclick =()=>{
-            let tweet = document.getElementById("searchInput1").value;
+            let tweetTwo = document.getElementById("searchInput1").value;
             let timestamp =  firebase.firestore.Timestamp.fromDate(new Date());
 
-            if(!tweet){
+            if(!tweetTwo){
                 alert("Empty tweet!");
-                document.getElementById("searchInput").style.borderStyle ="solid red";
-                document.getElementById("spinner").style.display ="none";
+                document.getElementById("searchInput1").style.border ="solid red";
+               
             }else{
-                document.getElementById("searchInput").style.borderStyle ="solid gray";
-            }
-            // Invoke Firebase
+                document.getElementById("searchInput1").style.border ="solid gray";
+
+                // Invoke Firebase
             let tweetDoc = firebase.firestore().collection("tweets").doc();
             tweetDoc.set({
-                tweet:tweet,
+                tweet:tweetTwo,
                 timestamp:timestamp,
                 tweetId: tweetDoc.id,
             userId: user.uid
             }).then(()=>{
                 alert("Tweet sent succesfully");
-                window.location.href =  "/home.html";
+                window.location.href = "/html/home.html";
             }).catch((error)=>{
                 alert(error.message);
             })
+            
+            }
+            
         }
           
        }
