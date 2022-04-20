@@ -61,6 +61,48 @@ firebase.auth().onAuthStateChanged((user)=>{
         window.location.href ="/index.html";
     }
 })
+
+// Modal
+   firebase.auth().onAuthStateChanged((user)=>{
+       if(user){
+
+        alert(user.uid);
+           document.getElementById("searchInput1").onkeyup =()=>{
+            document.getElementById("public").style.display ="block";
+            document.getElementById("lineOne").style.display ="block";
+           }
+        //    tweet
+        document.getElementById("tweetBtn3").onclick =()=>{
+            let tweet = document.getElementById("searchInput1").value;
+            let timestamp =  firebase.firestore.Timestamp.fromDate(new Date());
+
+            if(!tweet){
+                alert("Empty tweet!");
+                document.getElementById("searchInput").style.borderStyle ="solid red";
+                document.getElementById("spinner").style.display ="none";
+            }else{
+                document.getElementById("searchInput").style.borderStyle ="solid gray";
+            }
+            // Invoke Firebase
+            let tweetDoc = firebase.firestore().collection("tweets").doc();
+            tweetDoc.set({
+                tweet:tweet,
+                timestamp:timestamp,
+                tweetId: tweetDoc.id,
+            userId: user.uid
+            }).then(()=>{
+                alert("Tweet sent succesfully");
+                window.location.href =  "/home.html";
+            }).catch((error)=>{
+                alert(error.message);
+            })
+        }
+          
+       }
+        else{
+        window.location.href ="/index.html";
+    }
+   })
 // Btn2
 // document.getElementById("tweetBtn2").onclick =()=>{
 //     document.getElementById("searchInput").innerText ="@misacherio";
