@@ -28,14 +28,12 @@ firebase.auth().onAuthStateChanged((user)=>{
 
         if(!tweet){
             alert("empty tweet");
-            document.getElementById("searchInput").style.borderStyle ="solid";
-            document.getElementById("searchInput").style.borderBlockColor ="red";
+            document.getElementById("searchInput").style.borderStyle ="solid red";
             document.getElementById("spinner").style.display ="none";
         }else{
    
-            document.getElementById("searchInput").style.borderStyle ="solid";
-            document.getElementById("searchInput").style.borderBlockColor ="gray";
-
+            document.getElementById("searchInput").style.borderStyle ="solid gray";
+          
         // Invoke Firebase
             let tweetDoc = firebase.firestore().collection("tweets").doc();
         tweetDoc.set({
@@ -64,9 +62,9 @@ firebase.auth().onAuthStateChanged((user)=>{
     }
 })
 // Btn2
-document.getElementById("tweetBtn2").onclick =()=>{
-    document.getElementById("searchInput").innerText ="@misacherio";
-}
+// document.getElementById("tweetBtn2").onclick =()=>{
+//     document.getElementById("searchInput").innerText ="@misacherio";
+// }
 
 
 
