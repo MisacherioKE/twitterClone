@@ -57,7 +57,7 @@
     </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: transparent;height: 50vh;">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -78,13 +78,25 @@
     </div>
         <div class="modal-footer">
          
-          <button id="tweetBtn3" type="button" class="btn btn-primary" style="width: 100px; margin-left: 75%;">Tweet</button>
+          <button id="tweetBtn3" type="button" class="btn btn-primary" style="width: 100px; margin-left: 75%;border-radius: 50%;">Tweet</button>
         </div>
       </div>
     </div>
   </div>
    
-        </div>   
+        </div> 
+        <div class="row">
+            <button class="btn" id="profileBtn" style="padding: 5px;margin-top: 30px;width: 15%; border-radius: 40%; border: none;">
+                <img src="/images/ppic.jpg" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">
+                <p class="text">Misacherio</p>
+
+            </button>
+            <div id="signOut">
+                <button id="closeX"><i class="fa-solid fa-xmark"></i></button>
+                <button id="addAcc">Add an existing account</button>
+                <button id="logOut">Logout</button>
+            </div>
+        </div>  
                 </div>
                    
                 <div class="sectTwo">

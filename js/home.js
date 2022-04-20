@@ -106,11 +106,34 @@ firebase.auth().onAuthStateChanged((user)=>{
         window.location.href ="/index.html";
     }
    })
-// Btn2
-// document.getElementById("tweetBtn2").onclick =()=>{
-//     document.getElementById("searchInput").innerText ="@misacherio";
-// }
 
+// ProfileButtton
+document.getElementById("profileBtn").onclick =()=>{
+    document.getElementById("signOut").style.display ="block";
+}
+// logout
+document.getElementById("logOut").onclick =()=>{
+    window.location.href ="/index.html";
+}
+
+// Close
+document.getElementById("closeX").onclick =()=>{
+    document.getElementById("signOut").style.display ="none";
+}
+
+document.getElementById("closeX").style.position ="absolute";
+document.getElementById("closeX").style.top ="0";
+document.getElementById("closeX").style.right ="0";
+
+
+document.getElementById("profileBtn").onmouseover =()=>{
+    document.getElementById("profileBtn").style.border ="solid 1px gray";
+    document.getElementById("profileBtn").style.backgroundColor ="gray";
+}
+document.getElementById("profileBtn").onmouseout =()=>{
+    document.getElementById("profileBtn").style.border ="none";
+    document.getElementById("profileBtn").style.backgroundColor ="whitesmoke";
+}
 
 
 

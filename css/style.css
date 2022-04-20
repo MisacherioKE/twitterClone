@@ -21,6 +21,7 @@ margin-top: 10px;
 .fa-earth-africa{
     color: blue;
 }
+
 /* .fa-circle-ellipsis{
     color: white;
 }
@@ -100,4 +101,29 @@ margin-top: 10px;
     width: 300px;
     margin-left: 30px;
     margin-top: 20px;
+}
+/* #profileBtn:hover{
+    border: solid 1px gray;
+} */
+
+#signOut{
+    position: absolute;
+    bottom: 10%;
+    background-color: white;
+    width: 200px;
+    height: 25vh;
+    left: 15%;
+    z-index: 1;
+    border-radius: 10%;
+    display: none;
+}
+#signOut button{
+    margin: 20px;
+    border: none;
+    border-radius: 40%;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+}
+#signOut button:hover{
+    border: solid 1px gray;
 }
