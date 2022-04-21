@@ -57,17 +57,8 @@ document.getElementById("resetWindow").onclick =()=>{
     window.location.href ="/html/resetPass.html";
 }
 // Sign in with Google
-// import { GoogleAuthProvider } from "firebase/auth";
-
-// const provider = new GoogleAuthProvider();
-
-
-// import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
-// const auth = getAuth();
 document.getElementById("google").onclick = ()=>{
-    // const auth = getAuth();
-    // let provider = new GoogleAuthProvider();
+  
     let provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
@@ -82,19 +73,26 @@ document.getElementById("google").onclick = ()=>{
         window.location.href ="/html/home.html";
       }).catch((error) => {
           alert(error.message);
-        // Handle Errors here.
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.email;
-        // // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+    
       });
     
 }
 
-//   import { getAuth, signInWithRedirect } from "firebase/auth";
+// Sign in With Apple
+document.getElementById("apple").onclick =()=>{
+    var provider = new firebase.auth.OAuthProvider("https://www.apple.com/");
+    provider.addScope('email');
+provider.addScope('name');
 
-// const auth = getAuth();
-// signInWithRedirect(auth, provider);
+  firebase.auth().signInWithPopup(provider)
+  .then((result)=>{
+  var credential = result.credential;
+  var user = result.user;
+
+  var acessToken = credential.accessToken;
+  var idToken = credential.idToken;
+  window.location.href ="/html/home.html";
+  }).catch((error)=>{
+      alert(error.message);
+  })
+}
