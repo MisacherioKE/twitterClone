@@ -68,8 +68,8 @@ firebase.auth().onAuthStateChanged((user)=>{
 
         alert(user.uid);
            document.getElementById("searchInput1").onkeyup =()=>{
-            document.getElementById("public").style.display ="block";
-            document.getElementById("lineOne").style.display ="block";
+            document.getElementById("public1").style.display ="block";
+            document.getElementById("lineOne1").style.display ="block";
            }
         //    tweet
         document.getElementById("tweetBtn3").onclick =()=>{
