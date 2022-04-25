@@ -89,7 +89,7 @@ firebase.auth().onAuthStateChanged((user)=>{
                 tweet:tweetTwo,
                 timestamp:timestamp,
                 tweetId: tweetDoc.id,
-            userId: user.uid
+                userId: user.uid
             }).then(()=>{
                 alert("Tweet sent succesfully");
                 window.location.href = "/html/home.html";
