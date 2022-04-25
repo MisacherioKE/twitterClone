@@ -14,15 +14,21 @@ firebase.auth().onAuthStateChanged((user)=>{
                 let time = doc.data().timestamp;
                 let newTime = time.toDate();
                 let name = doc.data().username;
+      
+                if(doc.exists){
 
-                let content = '';
-                content +=`<div>`
-                content +=`<p>${name}</p>`
-                content +=`<p>${newTime}</p>`
-                content +=`<p>${tweet}</p>`
-                content +=`</div>`
-                
-                $("#sectTwoB").append(content);
+                    let content = '';
+                    content +=`<div>`
+                    content +=`<p>${name}</p>`
+                    content +=`<p>${newTime}</p>`
+                    content +=`<p>${tweet}</p>`
+                    content +=`</div>`
+                    
+                    $("#sectTwoB").append(content);
+                }else{
+                    alert("There's no such document");
+                }
+              
              
 
                 // document.getElementById("tweet").innerHTML = tweet;
