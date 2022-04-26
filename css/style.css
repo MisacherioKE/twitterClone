@@ -66,8 +66,14 @@ margin-top: 10px;
     background-color: white;
     border-radius: 20px;
     padding: 5px;
-    /* height: 5vh;
-    width: 70%; */
+}
+.search2{
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+   height: 15vh;
+   margin-top: 20px;
 }
 .line1{
     margin-left: 70px;

@@ -38,7 +38,7 @@ firebase.auth().onAuthStateChanged((user)=>{
                     input +=`<i onclick="deleteTweet(\`${tweetId}\`)"  class="fa-solid fa-trash h6" style="color: red; margin:10px;"></i>`
                     input +=`</div>`
 
-                    $("#edit").append(input);
+                    $("#sectTwoB").append(input);
 
                     // Deleting Tweet
                     window.deleteTweet =(value)=>{
@@ -49,7 +49,6 @@ firebase.auth().onAuthStateChanged((user)=>{
                             alert(tweet);
                         })
                         // Delete tweet
-
                         firebase.firestore().collection("tweets").doc(value)
                         .delete({
                             tweet:""
@@ -64,8 +63,9 @@ firebase.auth().onAuthStateChanged((user)=>{
 
                     // Editing the tweet
                     window.editTweet = (value) =>{
+                        document.getElementById("edit").style.display ="block";
 
-                        alert(value);
+                        // alert(value);
                         // Invoke firebase
                         firebase.firestore().collection("tweets").doc(value)
                         .get().then((doc)=>{
