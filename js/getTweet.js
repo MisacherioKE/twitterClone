@@ -34,16 +34,39 @@ firebase.auth().onAuthStateChanged((user)=>{
                     input +=`<p>${name}</p>`
                     input +=`<p>${newTime}</p>`
                     input += `<p>${tweet}</p>`
-                    input +=`<i onClick ="editTweet"(\`${tweetId}\`) class="fa-solid fa-pen-to-square"></i>`
-                    input +=`<i class="fa-solid fa-trash"></i>`
+                    input +=`<i onclick="editTweet(\`${tweetId}\`)" class="fa-solid fa-pen-to-square h6" style="color: blue; margin:10px;"></i>`
+                    input +=`<i onclick="deleteTweet(\`${tweetId}\`)"  class="fa-solid fa-trash h6" style="color: red; margin:10px;"></i>`
                     input +=`</div>`
 
                     $("#edit").append(input);
 
-                    
+                    // Deleting Tweet
+                    window.deleteTweet =(value)=>{
+                        // Invoke firebase
+                        firebase.firestore().collection("tweets").doc(value)
+                        .get().then((doc)=>{
+                            let tweet = doc.data().tweet;
+                            alert(tweet);
+                        })
+                        // Delete tweet
+
+                        firebase.firestore().collection("tweets").doc(value)
+                        .delete({
+                            tweet:""
+                        }).then(()=>{
+                            alert("This tweet will be deleted");
+                            alert("Tweet deleted successfully");
+                            window.location.reload();
+                        }).catch((error)=>{
+                            alert(error.message);
+                        })
+                    }
+
+                    // Editing the tweet
                     window.editTweet = (value) =>{
 
-                        // Invoke fiorebase
+                        alert(value);
+                        // Invoke firebase
                         firebase.firestore().collection("tweets").doc(value)
                         .get().then((doc)=>{
                             let tweet = doc.data().tweet;
