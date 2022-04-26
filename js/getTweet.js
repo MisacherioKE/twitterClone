@@ -22,9 +22,21 @@ firebase.auth().onAuthStateChanged((user)=>{
                     content +=`<p>${name}</p>`
                     content +=`<p>${newTime}</p>`
                     content +=`<p>${tweet}</p>`
+                    content +=`<button id="edit">Edit</button>`
                     content +=`</div>`
                     
                     $("#sectTwoB").append(content);
+                    
+                    document.getElementById("edit").onclick =()=>{
+                        let content ="";
+                        content += `<div>`
+                        content += `<p>${tweet}</p>`
+                        content += `<button id="update">update</button>`
+                        content += `<button id="delete">delete</button>`
+                        content += `</div>`
+                        $("#editBox").append(content);
+                        document.getElementById("editBox").style.display ="block";
+                    }
                 }else{
                     alert("There's no such document");
                 }
@@ -41,3 +53,4 @@ firebase.auth().onAuthStateChanged((user)=>{
         window.location.href ="index.html";
     }
 })
+
