@@ -8,6 +8,16 @@ window.oncontextmenu = ()=>{
 firebase.auth().onAuthStateChanged((user)=>{
     if(user){
 
+    //    firebase.firestore().collection("users").get()
+    //    .then((querySnapshot)=>{
+    //     querySnapshot.forEach((doc)=>{
+    //         let name = doc.data().username
+    //         alert(name);
+    //     }).catch((error)=>{
+    //         alert(error.message);
+    //     })
+    //     })
+        
 
         alert(user.uid);
         document.getElementById("searchInput").onkeyup =() =>{
