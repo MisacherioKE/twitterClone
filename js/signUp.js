@@ -11,18 +11,28 @@ document.getElementById("signup").onclick = () =>{
     let password = document.getElementById("pass").value;
     let username = document.getElementById("userName").value;
     let phonenumber = document.getElementById("phoneNumber").value;
+    let username1 = document.getElementById("userName1").value;
 
     if(email ==""){
         alert("empty field!");
         document.getElementById("email").style.border ="solid red";
         document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("userName1").style.border ="solid gray";
         document.getElementById("phoneNumber").style.border ="solid gray";
         document.getElementById("pass").style.border ="solid gray";
 
+    }else if(username1 ==""){
+        alert("empty field!");
+        document.getElementById("email").style.border ="solid gray";
+        document.getElementById("userName1").style.border ="solid red";
+        document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("phoneNumber").style.border ="solid gray";
+        document.getElementById("pass").style.border ="solid gray";
     }else if(username ==""){
         alert("empty field!");
         document.getElementById("email").style.border ="solid gray";
         document.getElementById("userName").style.border ="solid red";
+        document.getElementById("userName1").style.border ="solid gray";
         document.getElementById("phoneNumber").style.border ="solid gray";
         document.getElementById("pass").style.border ="solid gray";
 
@@ -30,6 +40,7 @@ document.getElementById("signup").onclick = () =>{
         alert("empty field!");
         document.getElementById("email").style.border ="solid gray";
         document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("userName1").style.border ="solid gray";
         document.getElementById("phoneNumber").style.border ="solid red";
         document.getElementById("pass").style.border ="solid gray";
 
@@ -37,12 +48,14 @@ document.getElementById("signup").onclick = () =>{
         document.getElementById("pass").style.border ="solid red";
         document.getElementById("email").style.border ="solid gray";
         document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("userName1").style.border ="solid gray";
         document.getElementById("phoneNumber").style.border ="solid gray";
         
     }
     else{
         document.getElementById("email").style.border ="solid gray";
         document.getElementById("userName").style.border ="solid gray";
+        document.getElementById("userName1").style.border ="solid gray";
         document.getElementById("phoneNumber").style.border ="solid gray";
         document.getElementById("pass").style.border ="solid gray";
 
@@ -70,7 +83,8 @@ document.getElementById("signup").onclick = () =>{
             email:email,
             username:username,
             phonenumber:phonenumber,
-            userId: uid
+            userId: uid,
+            nickname: username1
         }).then(()=>{
             alert("Please login with your credentials")
 
