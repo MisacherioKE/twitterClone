@@ -12,12 +12,15 @@ firebase.auth().onAuthStateChanged((user)=>{
        .then((querySnapshot)=>{
         querySnapshot.forEach((doc)=>{
             let name = doc.data().nickname;
-            let userId1 = doc.data().userId;
-            let userId = doc.data().userId
+            // let name1 = doc.data().nickname;
+            let userId = doc.data().userId;
             
-            if(userId1 === userId){
-                alert(`${name} signed in`);
-            }
+            alert(`${name} signed in`);
+        //   if(userId === name1){
+         
+        //   }
+             
+          
         
         })
         }).catch((error)=>{
