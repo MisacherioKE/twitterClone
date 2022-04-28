@@ -8,18 +8,24 @@ window.oncontextmenu = ()=>{
 firebase.auth().onAuthStateChanged((user)=>{
     if(user){
 
-    //    firebase.firestore().collection("users").get()
-    //    .then((querySnapshot)=>{
-    //     querySnapshot.forEach((doc)=>{
-    //         let name = doc.data().username
-    //         alert(name);
-    //     }).catch((error)=>{
-    //         alert(error.message);
-    //     })
-    //     })
+       firebase.firestore().collection("users").get()
+       .then((querySnapshot)=>{
+        querySnapshot.forEach((doc)=>{
+            let name = doc.data().nickname;
+            let userId1 = doc.data().userId;
+            let userId = doc.data().userId
+            
+            if(userId1 === userId){
+                alert(`${name} signed in`);
+            }
+        
+        })
+        }).catch((error)=>{
+            alert(error.message);
+        })
         
 
-        alert(user.uid);
+        
         document.getElementById("searchInput").onkeyup =() =>{
             document.getElementById("public").style.display ="block";
             document.getElementById("lineOne").style.display ="block";

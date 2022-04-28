@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 firebase.firestore().collection("users")
 .get().then((querySnapshot)=>{
     querySnapshot.forEach((doc)=>{
-        let name = doc.data().username;
+        let name = doc.data().nickname;
         let userId1 = doc.data().userId
  
 
