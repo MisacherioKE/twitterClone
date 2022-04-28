@@ -69,7 +69,8 @@ document.getElementById("signup").onclick = () =>{
         .set({
             email:email,
             username:username,
-            phonenumber:phonenumber
+            phonenumber:phonenumber,
+            userId: uid
         }).then(()=>{
             alert("Please login with your credentials")
 

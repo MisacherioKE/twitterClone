@@ -5,8 +5,18 @@ window.oncontextmenu = () =>{
 }
 
 firebase.auth().onAuthStateChanged((user)=>{
-    if(user){        
+    if(user){ 
 
+            // getting username  
+            
+firebase.firestore().collection("users")
+.get().then((querySnapshot)=>{
+    querySnapshot.forEach((doc)=>{
+        let name = doc.data().username;
+        let userId1 = doc.data().userId
+ 
+
+        
         // pull all tweeets
         firebase.firestore().collection("tweets").get()
         .then((querySnapshot)=>{
@@ -14,38 +24,35 @@ firebase.auth().onAuthStateChanged((user)=>{
                 let tweet = doc.data().tweet;
                 let time = doc.data().timestamp;
                 let newTime = time.toDate().toDateString();
-                let name = doc.data().username;
                 let tweetId = doc.data().tweetId;
                 let userId = doc.data().userId;
       
+                
                 if(doc.exists){
 
-                    // let content = '';
-                    // content +=`<div>`
-                    // content +=`<p>${name}</p>`
-                    // content +=`<p>${newTime}</p>`
-                    // content +=`<p>${tweet}</p>`
-                    // content +=`<button id="edit">Edit</button>`
-                    // content +=`</div>`
-                    
-                    // $("#sectTwoB").append(content);
+                  
 
+                    if(userId1 === userId){
 
-                    let input = '';
-                    input +=`<div>`
-                    input +=`<p>${name}</p>`
-                    input +=`<p>${newTime}</p>`
-                    input += `<p>${tweet}</p>`
-
-                    if(userId === user.uid){
-                        input +=`<i onclick="editTweet(\`${tweetId}\`)" class="fa-solid fa-pen-to-square h6" style="color: blue; margin:10px;"></i>`
-                        input +=`<i onclick="deleteTweet(\`${tweetId}\`)"  class="fa-solid fa-trash h6" style="color: red; margin:10px;"></i>`
+                        let input = '';
+                        input +=`<div>`
+                        input +=`<p>${name}</p>`
+                        input +=`<p>${newTime}</p>`
+                        input += `<p>${tweet}</p>`
+    
+                        if(userId === user.uid){
+                            input +=`<i onclick="editTweet(\`${tweetId}\`)" class="fa-solid fa-pen-to-square h6" style="color: blue; margin:10px;"></i>`
+                            input +=`<i onclick="deleteTweet(\`${tweetId}\`)"  class="fa-solid fa-trash h6" style="color: red; margin:10px;"></i>`
+                        }
+                       
+                        input +=`</div>`
+    
+                        $("#sectTwoB").append(input);
+    
                     }
+
+
                    
-                    input +=`</div>`
-
-                    $("#sectTwoB").append(input);
-
                   
 
                     // Deleting Tweet
@@ -118,6 +125,14 @@ firebase.auth().onAuthStateChanged((user)=>{
                 // document.getElementById("time").innerHTML = newTime;
             })
         })
+    })
+  
+
+    
+
+})
+
+
 
     }
     else{
