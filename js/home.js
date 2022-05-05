@@ -139,6 +139,10 @@ document.getElementById("logOut").onclick =()=>{
 document.getElementById("closeX").onclick =()=>{
     document.getElementById("signOut").style.display ="none";
 }
+// Add account
+document.getElementById("addAcc").onclick =()=>{
+    window.location.href ="/html/signUp.html"
+}
 
 document.getElementById("closeX").style.position ="absolute";
 document.getElementById("closeX").style.top ="0";
@@ -151,11 +155,10 @@ document.getElementById("profileBtn").onmouseover =()=>{
     document.getElementById("profileText").style.backgroundColor ="white";
 }
 document.getElementById("profileBtn").onmouseout =()=>{
-    document.getElementById("profileBtn").style.border ="none";
+    document.getElementById("profileText").style.backgroundColor ="whitesmoke";
     document.getElementById("profileBtn").style.backgroundColor ="whitesmoke";
 }
 // ProfileText
-document.getElementById("profileText").style.backgroundColor ="whitesmoke";
 document.getElementById("profileText").style.marginTop ="10px";
 
 
