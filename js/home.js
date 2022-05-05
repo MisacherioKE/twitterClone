@@ -146,13 +146,17 @@ document.getElementById("closeX").style.right ="0";
 
 
 document.getElementById("profileBtn").onmouseover =()=>{
-    document.getElementById("profileBtn").style.border ="solid 1px gray";
-    document.getElementById("profileBtn").style.backgroundColor ="whitesmoke";
+    // document.getElementById("profileBtn").style.border ="solid 1px gray";
+    document.getElementById("profileBtn").style.backgroundColor ="white";
+    document.getElementById("profileText").style.backgroundColor ="white";
 }
 document.getElementById("profileBtn").onmouseout =()=>{
     document.getElementById("profileBtn").style.border ="none";
     document.getElementById("profileBtn").style.backgroundColor ="whitesmoke";
 }
+// ProfileText
+document.getElementById("profileText").style.backgroundColor ="whitesmoke";
+document.getElementById("profileText").style.marginTop ="10px";
 
 
 
