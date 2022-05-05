@@ -147,7 +147,7 @@ document.getElementById("closeX").style.right ="0";
 
 document.getElementById("profileBtn").onmouseover =()=>{
     document.getElementById("profileBtn").style.border ="solid 1px gray";
-    document.getElementById("profileBtn").style.backgroundColor ="gray";
+    document.getElementById("profileBtn").style.backgroundColor ="whitesmoke";
 }
 document.getElementById("profileBtn").onmouseout =()=>{
     document.getElementById("profileBtn").style.border ="none";
