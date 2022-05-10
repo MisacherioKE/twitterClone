@@ -17,10 +17,22 @@ firebase.auth().onAuthStateChanged((user)=>{
 
             console.log(file);
             let uploadimg = storageRef.child("profilePics/").child(file.name).put(file);
+
+            uploadimg.on("state_changed", (snapshot) =>{
+                var progress = Math.floor(snapshot.bytesTransferred/snapshot.totalBytes)*100 ;
+                console.log(progress);
+
+            }, (error) =>{
+                alert(error.message);
+            }, ()=>{
+                uploadimg.snapshot.ref.getDownloadURL().then((downloadURL)=>{
+                    console.log(downloadURL);
+                })
+            })
         }
 
     }
     else{
-        window.location.href ="index.html";
+        window.location.href ="/index.html";
     }
 })
