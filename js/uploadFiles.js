@@ -20,6 +20,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 
             uploadimg.on("state_changed", (snapshot) =>{
                 var progress = Math.floor(snapshot.bytesTransferred/snapshot.totalBytes)*100 ;
+                document.getElementById("uploadProgress").innerHTML = progress;
                 console.log(progress);
 
             }, (error) =>{
@@ -27,6 +28,14 @@ firebase.auth().onAuthStateChanged((user)=>{
             }, ()=>{
                 uploadimg.snapshot.ref.getDownloadURL().then((downloadURL)=>{
                     console.log(downloadURL);
+                    firebase.firestore().collection("users").doc(user.uid)
+                    .update({
+                        downloadURL:downloadURL
+                    }).then(()=>{
+                        alert("upload successful");
+                    }).catch((error)=>{
+                        alert(error.message);
+                    })
                 })
             })
         }
