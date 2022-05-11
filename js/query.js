@@ -9,7 +9,7 @@ firebase.auth().onAuthStateChanged((user)=>{
      document.getElementById("searchTrends").onclick =()=>{
          let searchInput = document.getElementById("search2").value;
 
-         firebase.firestore().collection("users").where("username", "==", searchInput)
+         firebase.firestore().collection("users").where("username","==",searchInput)
          .get().then((querySnapshot)=>{
              querySnapshot.forEach((doc)=>{
                  let name = doc.data().nickname;
