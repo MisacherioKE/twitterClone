@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged((user)=>{
                 let downloadURL = doc.data().downloadURL;
 
                 let content ="";
-                content += `<div onClick ="sendMessage(\`${userId}\`)" class="col" id="pple" style="background-color: white; height: 100vh;">`
+                content += `<div onClick ="sendMessage(\`${userId}\`)" class="col" id="pple" style="background-color: white; height: 25vh; display: flex;">`
                 content +=`<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px; margin-left: 1%; margin-bottom: 15%;">`
                 content += `<h5>${name}</h5>`
                 content += ` </div>`
