@@ -66,6 +66,9 @@ margin-top: 10px;
     background-color: white;
     border-radius: 20px;
     padding: 5px;
+    position: absolute;
+    top: 25%;
+    left: 15%;
 }
 .searchText{
     border: none;
@@ -73,7 +76,9 @@ margin-top: 10px;
     border-radius: 20px;
     padding: 5px;
    height: 15vh;
-   margin-top: 20px;
+   position: absolute;
+   top: 0%;
+   left: 15%;
 }
 .line1{
     margin-left: 70px;

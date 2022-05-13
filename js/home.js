@@ -14,8 +14,40 @@ firebase.auth().onAuthStateChanged((user)=>{
             let name = doc.data().nickname;
             // let name1 = doc.data().nickname;
             let userId = doc.data().userId;
+            let downloadURL = doc.data().downloadURL
             
             alert(`${name} signed in`);
+
+            if(userId == user.uid){
+
+            let content ="";
+           
+            content += `<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">`
+          
+
+            $("#proPic").append(content);
+        }
+
+        if(userId == user.uid){
+
+            let content ="";
+           
+            content += `<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px; margin-left: 1%; margin-bottom: 15%;">`
+          
+
+            $("#proPic2").append(content);
+        }
+        if(userId == user.uid){
+
+            let content ="";
+           
+            content += `<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">`
+            content += `<p class="text" id="profileText" style="position: absolute; bottom: 5%; left: 15%;">@${name}</p>`
+
+           
+            $("#proPic3").append(content);
+        }
+                    
         //   if(userId === name1){
          
         //   }
@@ -159,7 +191,9 @@ document.getElementById("profileBtn").onmouseout =()=>{
     document.getElementById("profileBtn").style.backgroundColor ="whitesmoke";
 }
 // ProfileText
-document.getElementById("profileText").style.marginTop ="10px";
+// document.getElementById("profileText").style.position ="absolute";
+// document.getElementById("profileText").style.top ="5%";
+// document.getElementById("profileText").style.left ="5%";
 
 
 
