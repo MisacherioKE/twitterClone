@@ -33,6 +33,15 @@ firebase.auth().onAuthStateChanged((user)=>{
                         downloadURL:downloadURL
                     }).then(()=>{
                         alert("upload successful");
+                        
+                        document.getElementById("signup").onclick =()=>{
+                            document.getElementById("signup").style.display ="none";
+                            document.getElementById("loading").style.display ="block";
+                        
+                            alert("Please login with your credentials")
+                        
+                            window.location.href ="/index.html"
+                        }
                     }).catch((error)=>{
                         alert(error.message);
                     })

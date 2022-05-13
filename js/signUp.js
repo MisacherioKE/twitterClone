@@ -86,9 +86,9 @@ document.getElementById("signup").onclick = () =>{
             userId: uid,
             nickname: username1
         }).then(()=>{
-            alert("Please login with your credentials")
+            alert("Please upload your photo")
 
-            window.location.href ="/index.html"
+            window.location.href ="/html/profilePic.html"
         }).catch((error)=>{
             alert(error.message);
             console.log(error.message);
