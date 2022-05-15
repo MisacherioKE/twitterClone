@@ -9,19 +9,21 @@ firebase.auth().onAuthStateChanged((user)=>{
      document.getElementById("searchTrends").onclick =()=>{
          let searchInput = document.getElementById("search2").value;
 
-         firebase.firestore().collection("users").where("username","==",searchInput)
+         firebase.firestore().collection("users").where("nickname","==",searchInput)
          .get().then((querySnapshot)=>{
              querySnapshot.forEach((doc)=>{
                  let name = doc.data().nickname;
                  let email = doc.data().email;
                  let phone = doc.data().phonenumber;
+                 let downloadURL = doc.data().downloadURL;
 
                  
 
 
                  let content = "";
                  content +=`<div>`
-                 content +=`<h5>${name}</h5>`
+                 content +=`<h5>@${name}</h5>`
+                 content +=`<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px; margin-left: 1%; margin-bottom: 15%;">`
                  content +=`<h5>${email}</h5>`
                  content +=`<h5>${phone}</h5>`
                  content +=`</div>`
