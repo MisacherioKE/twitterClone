@@ -36,7 +36,7 @@ firebase.firestore().collection("users")
 
                         let input = '';
                         input +=`<div>`
-                        input +=`<p>${name}</p>`
+                        input +=`<p>@${name}</p>`
                         input +=`<p>${newTime}</p>`
                         input += `<p>${tweet}</p>`
     

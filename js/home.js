@@ -16,9 +16,11 @@ firebase.auth().onAuthStateChanged((user)=>{
             let userId = doc.data().userId;
             let downloadURL = doc.data().downloadURL
             
-            alert(`${name} signed in`);
+           
 
             if(userId == user.uid){
+
+                alert(`Welcome @${name}`);
 
             let content ="";
            
@@ -117,7 +119,7 @@ firebase.auth().onAuthStateChanged((user)=>{
    firebase.auth().onAuthStateChanged((user)=>{
        if(user){
 
-        alert(user.uid);
+        // alert(user.uid);
            document.getElementById("searchInput1").onkeyup =()=>{
             document.getElementById("public1").style.display ="block";
             document.getElementById("lineOne1").style.display ="block";
