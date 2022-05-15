@@ -13,14 +13,14 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebase.firestore().collection("users").where("userId","!=",user.uid).get()
         .then((querySnapshot)=>{
             querySnapshot.forEach((doc)=>{
-                let name = doc.data().username;
+                let name = doc.data().nickname;
                 let userId = doc.data().userId;
                 let downloadURL = doc.data().downloadURL;
 
                 let content ="";
                 content += `<div onClick ="sendMessage(\`${userId}\`)" class="col" id="pple" style="background-color: white; height: 25vh; display: flex;">`
                 content +=`<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px; margin-left: 1%; margin-bottom: 15%;">`
-                content += `<h5>${name}</h5>`
+                content += `<h5>@${name}</h5>`
                 content += ` </div>`
           
                 $("#msgs").append(content);
@@ -32,7 +32,10 @@ firebase.auth().onAuthStateChanged((user)=>{
 
 
         window.sendMessage =(value)=>{
-            alert(value);
+            // alert(value);
+
+            document.getElementById("chats").style.display ="block";
+
             document.getElementById("send").onclick =()=>{
                 let message = document.getElementById("msgInput").value;
                 let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
@@ -82,7 +85,7 @@ firebase.auth().onAuthStateChanged((user)=>{
                     if(messageTo == user.uid){
 
                         let content = "";
-                        content +=`<div id="inMgs" style="width: 300px;height: 100px;margin-top: 10px; background-color: blue; border-radius: 0 30px 30px 30px; margin-bottom: 20px;">`
+                        content +=`<div id="inMgs" style="width: 300px;height: 100px;margin-top: 10px; background-color: green; border-radius: 0 30px 30px 30px; margin-bottom: 20px;">`
                         content += `<p>${message}</p>`
                         content += `<h6 style="margin-top: 55px; margin-left: 170px;">${date}</h6>`
                         content +=`</div>`
