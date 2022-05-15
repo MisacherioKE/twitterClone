@@ -74,8 +74,8 @@ firebase.auth().onAuthStateChanged((user)=>{
                     content += `<p>${message}</p>`
                     content += `<h6 style="margin-top: 55px; margin-left: 170px;">${date}</h6>`
                     content +=`</div>`
-                    content += `<input type="text" id="msgInput">`
-                    content += ` <button class="btn btn-primary" id="send">Send</button>`
+                    // content += `<input type="text" id="msgInput">`
+                    // content += ` <button class="btn btn-primary" id="send">Send</button>`
 
                     $("#chats").append(content);
                 }
@@ -86,6 +86,8 @@ firebase.auth().onAuthStateChanged((user)=>{
                         content += `<p>${message}</p>`
                         content += `<h6 style="margin-top: 55px; margin-left: 170px;">${date}</h6>`
                         content +=`</div>`
+                        content += `<input type="text" id="msgInput">`
+                        content += ` <button class="btn btn-primary" id="send">Send</button>`
                       
     
                         $("#chats").append(content);

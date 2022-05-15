@@ -9,11 +9,18 @@ firebase.firestore().collection("users")
 .get().then((querySnapshot)=>{
     querySnapshot.forEach((doc)=>{
         let email = doc.data().email;
-        document.getElementById("email").value = email;
+        let userId = doc.data().userId;
+
+        if(userId == userId.uid){
+
+            document.getElementById("email").value = email;
+        }
+
+       
 
         document.getElementById("reset").onclick = ()=>{
    
-             let email = document.getElementById("email").value; 
+            //  let email = document.getElementById("email").value; 
            
             if(!email){
                 alert("Empty field!")
