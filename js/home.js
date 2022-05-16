@@ -12,7 +12,6 @@ firebase.auth().onAuthStateChanged((user)=>{
        .then((querySnapshot)=>{
         querySnapshot.forEach((doc)=>{
             let name = doc.data().nickname;
-            // let name1 = doc.data().nickname;
             let userId = doc.data().userId;
             let downloadURL = doc.data().downloadURL
             
@@ -54,15 +53,12 @@ firebase.auth().onAuthStateChanged((user)=>{
             let content ="";
            
             content += `<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">`
-            // <img src="/images/ppic.jpg" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">
 
 
             $("#proPic4").append(content);
         }
                     
-        //   if(userId === name1){
-         
-        //   }
+      
              
           
         
