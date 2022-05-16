@@ -13,7 +13,8 @@ firebase.firestore().collection("users")
 .get().then((querySnapshot)=>{
     querySnapshot.forEach((doc)=>{
         let name = doc.data().nickname;
-        let userId1 = doc.data().userId
+        let userId1 = doc.data().userId;
+        let downloadURL = doc.data().downloadURL;
  
 
         
@@ -36,6 +37,7 @@ firebase.firestore().collection("users")
 
                         let input = '';
                         input +=`<div>`
+                        input +=`<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">`
                         input +=`<p>@${name}</p>`
                         input +=`<p>${newTime}</p>`
                         input += `<p>${tweet}</p>`
