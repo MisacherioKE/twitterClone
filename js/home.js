@@ -49,6 +49,16 @@ firebase.auth().onAuthStateChanged((user)=>{
            
             $("#proPic3").append(content);
         }
+        if(userId == user.uid){
+
+            let content ="";
+           
+            content += `<img src="${downloadURL}" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">`
+            // <img src="/images/ppic.jpg" alt="" class="img" style="height: 50px; object-fit: cover; border-radius: 50%; width: 50px;">
+
+
+            $("#proPic4").append(content);
+        }
                     
         //   if(userId === name1){
          
