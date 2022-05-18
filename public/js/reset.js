@@ -11,7 +11,7 @@ firebase.firestore().collection("users")
         let email = doc.data().email;
         let userId = doc.data().userId;
 
-        if(userId == userId.uid){
+        if(userId == user.uid){
 
             document.getElementById("email").value = email;
         }
@@ -42,14 +42,6 @@ firebase.firestore().collection("users")
                     document.getElementById("reset").style.display ="block";
                 })
         
-            // invoke firebase
-            // firebase.auth().sendPasswordResetEmail(email).then(()=>{
-            //     alert("A reset link has been sent to your email");
-            // }).catch((error) =>{
-            //     alert(error.message);
-        
-            //     console.log(error.message);
-            // })
         }
     })
    
